@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="pane_workSpace" layoutY="14.0" prefHeight="28.0" prefWidth="972.0" AnchorPane.bottomAnchor="515.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="28.0" prefWidth="972.0">
+              <menus>
+                <Menu fx:id="menu_file" mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="menuItem_save" mnemonicParsing="false" onAction="#save" text="Save" />
+                    <MenuItem fx:id="menuItem_load" mnemonicParsing="false" onAction="#load" text="Load" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuItem_closeSession" mnemonicParsing="false" onAction="#closeSession" text="Close Session" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuItem_exit" mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_toList" mnemonicParsing="false" text="To List">
+                  <items>
+                    <MenuItem fx:id="menuItem_users" mnemonicParsing="false" onAction="#toListUsers" text="Users" />
+                        <MenuItem fx:id="menuItem_advanceUsers" mnemonicParsing="false" onAction="#toListAdvUsers" text="Advance Users" />
+                        <MenuItem fx:id="menuItem_administrators" mnemonicParsing="false" onAction="#toListAdminUsers" text="Administrators" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuItem_allUsers" mnemonicParsing="false" onAction="#toListAllUsers" text="All Users" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_window" mnemonicParsing="false" text="Window">
+                  <items>
+                    <MenuItem fx:id="menuItem_usersProfile" mnemonicParsing="false" onAction="#changeToUserWindow" text="Users' profiles" />
+                        <MenuItem fx:id="menuItem_myProfile" mnemonicParsing="false" onAction="#changeToMyWindow" text="My profile" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menu_help" mnemonicParsing="false" text="Help">
+                    <items>
+                      <MenuItem fx:id="menuItem_help" mnemonicParsing="false" onAction="#help" text="Help" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+      <Pane fx:id="pane_users" layoutY="30.0" prefHeight="516.0" prefWidth="972.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <TableView fx:id="tableView_users" layoutY="26.0" prefHeight="490.0" prefWidth="514.0">
+              <columns>
+                <TableColumn fx:id="tableColumn_fullName" prefWidth="253.0" text="Full Name" />
+                <TableColumn fx:id="tableColumn_userName" minWidth="0.0" prefWidth="146.0" text="User Name" />
+                  <TableColumn fx:id="tableColumn_group" prefWidth="111.0" text="Group" />
+              </columns>
+            </TableView>
+            <VBox fx:id="vBox_userForm" layoutX="615.0" layoutY="51.0" prefHeight="265.0" prefWidth="249.0">
+               <children>
+                  <Label fx:id="label_fullName" text="Full Name:" />
+                  <TextField fx:id="textField_fullName" />
+                  <Label fx:id="label_fixFullName" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="label_username" text="User Name:" />
+                  <TextField fx:id="textField_userName" />
+                  <Label fx:id="label_fixUsername" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="label_password" text="Password:" />
+                  <TextField fx:id="textField_password" />
+                  <Label fx:id="label_fixPassword" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="label_group" text="Group:" />
+                  <ComboBox fx:id="comboBox_groups" prefHeight="25.0" prefWidth="249.0" />
+                  <Label fx:id="label_fixGroup" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <ButtonBar fx:id="buttonBar_formOptions" layoutX="564.0" layoutY="452.0" prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="button_addUser" mnemonicParsing="false" onAction="#addUser" text="Add" />
+                  <Button fx:id="button_deleteUser" mnemonicParsing="false" onAction="#removeUser" text="Delete" />
+                  <Button fx:id="button_editUser" mnemonicParsing="false" onAction="#editUser" text="Edit" />
+                  <Button fx:id="button_exportUser" mnemonicParsing="false" onAction="#exportUser" text="Export" />
+              </buttons>
+            </ButtonBar>
+            <Label fx:id="label_notification" alignment="CENTER" prefHeight="25.0" prefWidth="514.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane_login" prefHeight="543.0" prefWidth="972.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="vBox_startSession" layoutX="288.0" layoutY="129.0" prefHeight="285.0" prefWidth="397.0">
+               <children>
+                  <Label fx:id="label_welcome" text="Welcome">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="100.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="label_userStartSession" text="User name:" />
+                  <TextField fx:id="textField_startSession">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="label_passwordStartSession" text="Password:" />
+                  <PasswordField fx:id="passwordField_startSession">
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Button fx:id="button_startSession" mnemonicParsing="false" onAction="#startSession" prefWidth="100.0" text="Start Session">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane fx:id="pane_mySelf" layoutY="27.0" prefHeight="516.0" prefWidth="972.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+         <children>
+            <VBox fx:id="vBox_myOptions" layoutX="246.0" layoutY="122.0" prefHeight="273.0" prefWidth="480.0" spacing="40.0">
+               <children>
+                  <ToggleButton fx:id="toggleButton_changePassword" mnemonicParsing="false" onAction="#changePassOption" prefWidth="480.0" text="Change Password" />
+                  <HBox fx:id="hBox_newPassword" prefHeight="142.0" prefWidth="308.0" spacing="30.0">
+                     <children>
+                        <VBox prefHeight="142.0" prefWidth="340.0" spacing="20.0">
+                           <children>
+                              <PasswordField fx:id="passwordField_password" promptText="password" />
+                              <PasswordField fx:id="passwordField_newPassword" promptText="new password" />
+                              <PasswordField fx:id="passwordField_newPassword2" promptText="new password" />
+                              <Label fx:id="label_fixMyPassword" textFill="RED">
+                                 <VBox.margin>
+                                    <Insets top="-10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="button_accept" mnemonicParsing="false" onAction="#acceptChangePass" prefWidth="100.0" text="Accept">
+                           <HBox.margin>
+                              <Insets top="47.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="button_exportMyData" mnemonicParsing="false" onAction="#exportMyData" prefWidth="480.0" text="Export my Data" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

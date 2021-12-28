@@ -1,0 +1,89 @@
+/*-------------------------------------------------ASPECTOS GENERALES-------------------------------------------------*/
+.root{
+    -fx-background-color: white;
+}
+.button, .toggle-button{
+    -fx-background-color: rgb(66, 193, 255);
+    -fx-text-fill: white;
+    -fx-background-radius: 50;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-font-weight: bold;
+}
+.button:hover, .toggle-button:hover{
+    -fx-background-color: rgb(155, 200, 255);
+}
+.button:pressed, .toggle-button:selected{
+    -fx-effect: innershadow(three-pass-box, rgba(150, 150, 150, 0.7), 6, 0.0, 0, 2);
+}
+.toggle-button:selected:hover{
+    -fx-background-color: rgb(155, 200, 255);
+}
+.menu-bar{
+    -fx-background-color: white;
+    -fx-border-width: 0;
+    -fx-border-color: rgb(66, 193, 255);
+}
+/*-----------------------------------------FIN DE ASPECTOS GENERALES--------------------------------------------------*/
+/*---------------------------------------ASPECTO DEL PANEL DE USUARIOS------------------------------------------------*/
+#label_fullName, #label_username, #label_password, #label_group, #label_notification{
+    -fx-font-size: 16px;
+    -fx-text-fill: rgb(150, 150, 150);
+    -fx-effect: innershadow(three-pass-box, rgba(120, 120, 120, 0.7), 6, 0.0, 0, 2);
+}
+.table-view{
+    -fx-border-color: white;
+}
+.table-column{
+    -fx-text-background-color: white;
+    -fx-text-fill: black;
+}
+.table-view .column-header, .table-view .column-header .filler, .table-view .column-header-background .filler{
+    -fx-background-color: rgb(66, 193, 255);
+    -fx-border-width: 1px;
+    -fx-border-color: white;
+}
+.table-view .table-header, .table-view .table-header .filler, .table-view .table-header-background .filler{
+    -fx-background-color: white;
+}
+.table-view .scroll-bar, .table-view .scroll-bar .track, .table-view .corner{
+    -fx-background-color: white;
+}
+.table-view .scroll-bar .thumb{
+    -fx-background-color: rgb(66, 193, 255);
+}
+.table-view:row-selection{
+    -fx-background-color: rgb(66, 193, 255);
+}
+#comboBox_groups{
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(100, 100, 100, 0.5);
+    -fx-border-radius: 4px;
+}
+/*-----------------------------------FIN DEL ASPECTO DEL PANEL DE USUARIOS--------------------------------------------*/
+/*-----------------------------------------ASPECTO DEL PANEL PERSONAL-------------------------------------------------*/
+#toggleButton_changePassword, #button_accept, #button_exportMyData{
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-scale-z: 1.2;
+}
+/*-------------------------------------FIN DEL ASPECTO DEL PANEL PERSONAL---------------------------------------------*/
+/*----------------------------------------ASPECTO DEL PANEL DE LOGIN--------------------------------------------------*/
+#label_welcome{
+    -fx-font-size: 42px;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: rgb(215, 215, 215);
+    -fx-effect: innershadow(three-pass-box, rgba(150, 150, 150, 0.7), 6, 0.0, 0, 2);
+    -fx-font-weight: bold;
+}
+#label_userStartSession, #label_passwordStartSession{
+    -fx-font-size: 16px;
+    -fx-text-fill: rgb(150, 150, 150);
+    -fx-effect: innershadow(three-pass-box, rgba(100, 100, 100, 0.7), 6, 0.0, 0, 2);
+}
+#button_startSession{
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-scale-z: 1.5;
+}
+/*------------------------------------FIN DEL ASPECTO DEL PANEL DE LOGIN----------------------------------------------*/
